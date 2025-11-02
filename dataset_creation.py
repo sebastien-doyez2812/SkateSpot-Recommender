@@ -79,5 +79,5 @@ for idx in tqdm.tqdm(range(N)):
 df = pd.DataFrame(data)
 print(df.head(10))
 
-df.to_csv("skatepark_dataset.csv", index=False)
+df.to_csv("data/skatepark_dataset.csv", index=False)
 print("\nDone")    
