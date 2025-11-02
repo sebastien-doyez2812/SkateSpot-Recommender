@@ -1,0 +1,8 @@
+pandas
+numpy
+tqdm
+boto3
+tensorflow
+matplotlib
+scikit-learn
+jupyter
