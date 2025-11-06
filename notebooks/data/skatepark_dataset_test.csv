@@ -1,8 +1,0 @@
-spot_name,index spot,weather,temperature,traffic_time,weekday,park_score,satisfaction
-Ahuntsic,0,"{0: 'Rain or Snow', 1: 'Windy or heavily cloudy', 2: 'cloudy', 3: 'Blue sky'}",23.7,10.1,0,8.0,9.0
-VanHorne,1,"{0: 'Rain or Snow', 1: 'Windy or heavily cloudy', 2: 'cloudy', 3: 'Blue sky'}",23.7,10.1,0,4.0,4.0
-Verdun,2,"{0: 'Rain or Snow', 1: 'Windy or heavily cloudy', 2: 'cloudy', 3: 'Blue sky'}",23.7,10.1,0,2.0,2.0
-Lasalle,3,"{0: 'Rain or Snow', 1: 'Windy or heavily cloudy', 2: 'cloudy', 3: 'Blue sky'}",23.7,10.1,0,8.5,8.0
-Préfontaine,4,"{0: 'Rain or Snow', 1: 'Windy or heavily cloudy', 2: 'cloudy', 3: 'Blue sky'}",23.7,10.1,0,8.5,9.0
-Boucherville,5,"{0: 'Rain or Snow', 1: 'Windy or heavily cloudy', 2: 'cloudy', 3: 'Blue sky'}",23.7,10.1,0,7.0,7.0
-Taz,6,"{0: 'Rain or Snow', 1: 'Windy or heavily cloudy', 2: 'cloudy', 3: 'Blue sky'}",23.7,10.1,0,7.0,2.0
