@@ -1,0 +1,185 @@
+spot_name,index spot,weather,temperature,traffic_time,weekday,park_score,satisfaction
+Ahuntsic,0,cloudy,24.9,17.9,0,8.0,8.0
+VanHorne,1,cloudy,24.9,17.9,0,4.0,2.0
+Verdun,2,cloudy,24.9,17.9,0,2.0,1.0
+Lasalle,3,cloudy,24.9,17.9,0,8.5,8.0
+Préfontaine,4,cloudy,24.9,17.9,0,8.5,8.0
+Boucherville,5,cloudy,24.9,17.9,0,7.0,8.0
+Taz,6,cloudy,24.9,17.9,0,7.0,1.0
+Spin,7,cloudy,24.9,17.9,0,6.5,1.0
+Saint Jérome,8,cloudy,24.9,17.9,0,8.0,9.0
+Saint Sauveur,9,cloudy,24.9,17.9,0,8.5,9.0
+Assomption,10,cloudy,24.9,17.9,0,8.5,9.0
+Benny,11,cloudy,24.9,17.9,0,8.0,8.5
+Dorval,12,cloudy,24.9,17.9,0,8.0,8.0
+Magog,13,cloudy,24.9,17.9,0,9.5,9.0
+Berthierville,14,cloudy,24.9,17.9,0,9.5,9.0
+Ahuntsic,0,Rain or Snow,32.8,32.6,5,8.0,0.0
+VanHorne,1,Rain or Snow,32.8,32.6,5,4.0,0.0
+Verdun,2,Rain or Snow,32.8,32.6,5,2.0,0.0
+Lasalle,3,Rain or Snow,32.8,32.6,5,8.5,0.0
+Préfontaine,4,Rain or Snow,32.8,32.6,5,8.5,0.0
+Boucherville,5,Rain or Snow,32.8,32.6,5,7.0,0.0
+Taz,6,Rain or Snow,32.8,32.6,5,7.0,5.0
+Spin,7,Rain or Snow,32.8,32.6,5,6.5,5.0
+Saint Jérome,8,Rain or Snow,32.8,32.6,5,8.0,0.0
+Saint Sauveur,9,Rain or Snow,32.8,32.6,5,8.5,0.0
+Assomption,10,Rain or Snow,32.8,32.6,5,8.5,0.0
+Benny,11,Rain or Snow,32.8,32.6,5,8.0,0.0
+Dorval,12,Rain or Snow,32.8,32.6,5,8.0,0.0
+Magog,13,Rain or Snow,32.8,32.6,5,9.5,0.0
+Berthierville,14,Rain or Snow,32.8,32.6,5,9.5,0.0
+Ahuntsic,0,Rain or Snow,18.7,18.3,1,8.0,0.0
+VanHorne,1,Rain or Snow,18.7,18.3,1,4.0,0.0
+Verdun,2,Rain or Snow,18.7,18.3,1,2.0,0.0
+Lasalle,3,Rain or Snow,18.7,18.3,1,8.5,0.0
+Préfontaine,4,Rain or Snow,18.7,18.3,1,8.5,0.0
+Boucherville,5,Rain or Snow,18.7,18.3,1,7.0,0.0
+Taz,6,Rain or Snow,18.7,18.3,1,7.0,9.0
+Spin,7,Rain or Snow,18.7,18.3,1,6.5,8.0
+Saint Jérome,8,Rain or Snow,18.7,18.3,1,8.0,0.0
+Saint Sauveur,9,Rain or Snow,18.7,18.3,1,8.5,0.0
+Assomption,10,Rain or Snow,18.7,18.3,1,8.5,0.0
+Benny,11,Rain or Snow,18.7,18.3,1,8.0,0.0
+Dorval,12,Rain or Snow,18.7,18.3,1,8.0,0.0
+Magog,13,Rain or Snow,18.7,18.3,1,9.5,0.0
+Berthierville,14,Rain or Snow,18.7,18.3,1,9.5,0.0
+Ahuntsic,0,Blue sky,13.2,32.0,5,8.0,4.0
+VanHorne,1,Blue sky,13.2,32.0,5,4.0,2.0
+Verdun,2,Blue sky,13.2,32.0,5,2.0,1.0
+Lasalle,3,Blue sky,13.2,32.0,5,8.5,8.0
+Préfontaine,4,Blue sky,13.2,32.0,5,8.5,6.0
+Boucherville,5,Blue sky,13.2,32.0,5,7.0,5.0
+Taz,6,Blue sky,13.2,32.0,5,7.0,4.0
+Spin,7,Blue sky,13.2,32.0,5,6.5,4.0
+Saint Jérome,8,Blue sky,13.2,32.0,5,8.0,9.0
+Saint Sauveur,9,Blue sky,13.2,32.0,5,8.5,9.0
+Assomption,10,Blue sky,13.2,32.0,5,8.5,9.0
+Benny,11,Blue sky,13.2,32.0,5,8.0,3.0
+Dorval,12,Blue sky,13.2,32.0,5,8.0,7.0
+Magog,13,Blue sky,13.2,32.0,5,9.5,9.0
+Berthierville,14,Blue sky,13.2,32.0,5,9.5,9.0
+Ahuntsic,0,Rain or Snow,21.6,27.9,3,8.0,0.0
+VanHorne,1,Rain or Snow,21.6,27.9,3,4.0,0.0
+Verdun,2,Rain or Snow,21.6,27.9,3,2.0,0.0
+Lasalle,3,Rain or Snow,21.6,27.9,3,8.5,0.0
+Préfontaine,4,Rain or Snow,21.6,27.9,3,8.5,0.0
+Boucherville,5,Rain or Snow,21.6,27.9,3,7.0,0.0
+Taz,6,Rain or Snow,21.6,27.9,3,7.0,6.0
+Spin,7,Rain or Snow,21.6,27.9,3,6.5,6.0
+Saint Jérome,8,Rain or Snow,21.6,27.9,3,8.0,0.0
+Saint Sauveur,9,Rain or Snow,21.6,27.9,3,8.5,0.0
+Assomption,10,Rain or Snow,21.6,27.9,3,8.5,0.0
+Benny,11,Rain or Snow,21.6,27.9,3,8.0,0.0
+Dorval,12,Rain or Snow,21.6,27.9,3,8.0,0.0
+Magog,13,Rain or Snow,21.6,27.9,3,9.5,0.0
+Berthierville,14,Rain or Snow,21.6,27.9,3,9.5,0.0
+Ahuntsic,0,cloudy,19.9,34.9,3,8.0,9.0
+VanHorne,1,cloudy,19.9,34.9,3,4.0,5.0
+Verdun,2,cloudy,19.9,34.9,3,2.0,2.0
+Lasalle,3,cloudy,19.9,34.9,3,8.5,8.0
+Préfontaine,4,cloudy,19.9,34.9,3,8.5,6.0
+Boucherville,5,cloudy,19.9,34.9,3,7.0,6.0
+Taz,6,cloudy,19.9,34.9,3,7.0,2.0
+Spin,7,cloudy,19.9,34.9,3,6.5,2.0
+Saint Jérome,8,cloudy,19.9,34.9,3,8.0,7.0
+Saint Sauveur,9,cloudy,19.9,34.9,3,8.5,7.0
+Assomption,10,cloudy,19.9,34.9,3,8.5,7.0
+Benny,11,cloudy,19.9,34.9,3,8.0,8.0
+Dorval,12,cloudy,19.9,34.9,3,8.0,8.0
+Magog,13,cloudy,19.9,34.9,3,9.5,5.0
+Berthierville,14,cloudy,19.9,34.9,3,9.5,7.0
+Ahuntsic,0,Blue sky,17.5,29.7,3,8.0,9.0
+VanHorne,1,Blue sky,17.5,29.7,3,4.0,4.0
+Verdun,2,Blue sky,17.5,29.7,3,2.0,3.0
+Lasalle,3,Blue sky,17.5,29.7,3,8.5,8.0
+Préfontaine,4,Blue sky,17.5,29.7,3,8.5,8.0
+Boucherville,5,Blue sky,17.5,29.7,3,7.0,7.0
+Taz,6,Blue sky,17.5,29.7,3,7.0,3.0
+Spin,7,Blue sky,17.5,29.7,3,6.5,3.0
+Saint Jérome,8,Blue sky,17.5,29.7,3,8.0,9.0
+Saint Sauveur,9,Blue sky,17.5,29.7,3,8.5,9.0
+Assomption,10,Blue sky,17.5,29.7,3,8.5,9.0
+Benny,11,Blue sky,17.5,29.7,3,8.0,7.0
+Dorval,12,Blue sky,17.5,29.7,3,8.0,7.0
+Magog,13,Blue sky,17.5,29.7,3,9.5,9.0
+Berthierville,14,Blue sky,17.5,29.7,3,9.5,9.0
+Ahuntsic,0,Blue sky,22.6,29.5,6,8.0,3.0
+VanHorne,1,Blue sky,22.6,29.5,6,4.0,2.0
+Verdun,2,Blue sky,22.6,29.5,6,2.0,1.0
+Lasalle,3,Blue sky,22.6,29.5,6,8.5,8.0
+Préfontaine,4,Blue sky,22.6,29.5,6,8.5,6.0
+Boucherville,5,Blue sky,22.6,29.5,6,7.0,6.0
+Taz,6,Blue sky,22.6,29.5,6,7.0,1.0
+Spin,7,Blue sky,22.6,29.5,6,6.5,1.0
+Saint Jérome,8,Blue sky,22.6,29.5,6,8.0,9.0
+Saint Sauveur,9,Blue sky,22.6,29.5,6,8.5,9.0
+Assomption,10,Blue sky,22.6,29.5,6,8.5,9.0
+Benny,11,Blue sky,22.6,29.5,6,8.0,3.0
+Dorval,12,Blue sky,22.6,29.5,6,8.0,8.0
+Magog,13,Blue sky,22.6,29.5,6,9.5,9.0
+Berthierville,14,Blue sky,22.6,29.5,6,9.5,9.0
+Ahuntsic,0,Windy or heavily cloudy,20.9,22.2,3,8.0,5.0
+VanHorne,1,Windy or heavily cloudy,20.9,22.2,3,4.0,6.0
+Verdun,2,Windy or heavily cloudy,20.9,22.2,3,2.0,2.0
+Lasalle,3,Windy or heavily cloudy,20.9,22.2,3,8.5,2.0
+Préfontaine,4,Windy or heavily cloudy,20.9,22.2,3,8.5,7.0
+Boucherville,5,Windy or heavily cloudy,20.9,22.2,3,7.0,7.0
+Taz,6,Windy or heavily cloudy,20.9,22.2,3,7.0,8.0
+Spin,7,Windy or heavily cloudy,20.9,22.2,3,6.5,8.0
+Saint Jérome,8,Windy or heavily cloudy,20.9,22.2,3,8.0,3.0
+Saint Sauveur,9,Windy or heavily cloudy,20.9,22.2,3,8.5,3.0
+Assomption,10,Windy or heavily cloudy,20.9,22.2,3,8.5,3.0
+Benny,11,Windy or heavily cloudy,20.9,22.2,3,8.0,6.0
+Dorval,12,Windy or heavily cloudy,20.9,22.2,3,8.0,3.0
+Magog,13,Windy or heavily cloudy,20.9,22.2,3,9.5,3.0
+Berthierville,14,Windy or heavily cloudy,20.9,22.2,3,9.5,3.0
+Ahuntsic,0,Blue sky,17.9,15.8,0,8.0,9.0
+VanHorne,1,Blue sky,17.9,15.8,0,4.0,4.0
+Verdun,2,Blue sky,17.9,15.8,0,2.0,2.0
+Lasalle,3,Blue sky,17.9,15.8,0,8.5,8.0
+Préfontaine,4,Blue sky,17.9,15.8,0,8.5,8.0
+Boucherville,5,Blue sky,17.9,15.8,0,7.0,8.0
+Taz,6,Blue sky,17.9,15.8,0,7.0,2.0
+Spin,7,Blue sky,17.9,15.8,0,6.5,2.0
+Saint Jérome,8,Blue sky,17.9,15.8,0,8.0,9.0
+Saint Sauveur,9,Blue sky,17.9,15.8,0,8.5,9.0
+Assomption,10,Blue sky,17.9,15.8,0,8.5,9.0
+Benny,11,Blue sky,17.9,15.8,0,8.0,9.0
+Dorval,12,Blue sky,17.9,15.8,0,8.0,9.0
+Magog,13,Blue sky,17.9,15.8,0,9.5,9.0
+Berthierville,14,Blue sky,17.9,15.8,0,9.5,9.0
+Ahuntsic,0,cloudy,30.6,31.6,6,8.0,3.0
+VanHorne,1,cloudy,30.6,31.6,6,4.0,2.0
+Verdun,2,cloudy,30.6,31.6,6,2.0,2.0
+Lasalle,3,cloudy,30.6,31.6,6,8.5,9.0
+Préfontaine,4,cloudy,30.6,31.6,6,8.5,5.0
+Boucherville,5,cloudy,30.6,31.6,6,7.0,5.0
+Taz,6,cloudy,30.6,31.6,6,7.0,1.0
+Spin,7,cloudy,30.6,31.6,6,6.5,1.0
+Saint Jérome,8,cloudy,30.6,31.6,6,8.0,9.0
+Saint Sauveur,9,cloudy,30.6,31.6,6,8.5,9.0
+Assomption,10,cloudy,30.6,31.6,6,8.5,9.0
+Benny,11,cloudy,30.6,31.6,6,8.0,4.0
+Dorval,12,cloudy,30.6,31.6,6,8.0,8.0
+Magog,13,cloudy,30.6,31.6,6,9.5,9.0
+Berthierville,14,cloudy,30.6,31.6,6,9.5,9.0
+Ahuntsic,0,Windy or heavily cloudy,33.3,19.0,0,8.0,4.0
+VanHorne,1,Windy or heavily cloudy,33.3,19.0,0,4.0,6.0
+Verdun,2,Windy or heavily cloudy,33.3,19.0,0,2.0,3.0
+Lasalle,3,Windy or heavily cloudy,33.3,19.0,0,8.5,3.0
+Préfontaine,4,Windy or heavily cloudy,33.3,19.0,0,8.5,7.0
+Boucherville,5,Windy or heavily cloudy,33.3,19.0,0,7.0,8.0
+Taz,6,Windy or heavily cloudy,33.3,19.0,0,7.0,1.0
+Spin,7,Windy or heavily cloudy,33.3,19.0,0,6.5,1.0
+Saint Jérome,8,Windy or heavily cloudy,33.3,19.0,0,8.0,1.0
+Saint Sauveur,9,Windy or heavily cloudy,33.3,19.0,0,8.5,1.0
+Assomption,10,Windy or heavily cloudy,33.3,19.0,0,8.5,1.0
+Benny,11,Windy or heavily cloudy,33.3,19.0,0,8.0,5.0
+Dorval,12,Windy or heavily cloudy,33.3,19.0,0,8.0,3.0
+Magog,13,Windy or heavily cloudy,33.3,19.0,0,9.5,1.0
+Berthierville,14,Windy or heavily cloudy,33.3,19.0,0,9.5,1.0
+Ahuntsic,0,Windy or heavily cloudy,28.7,32.4,3,8.0,3.0
+VanHorne,1,Windy or heavily cloudy,28.7,32.4,3,4.0,4.0
+Verdun,2,Windy or heavily cloudy,28.7,32.4,3,2.0,3.0
+Lasalle,3,Windy or heavily cloudy,28.7,32.4,3,8.5,3.0

@@ -1,0 +1,151 @@
+spot_name,index spot,weather,temperature,traffic_time,satisfaction
+Ahuntsic,0,0,30.1,19.4,0.0
+VanHorne,0,0,30.1,19.4,3.0
+Verdun,0,0,30.1,19.4,0.0
+Lasalle,0,0,30.1,19.4,0.0
+Préfontaine,0,0,30.1,19.4,0.0
+Boucherville,0,0,30.1,19.4,0.0
+Taz,0,0,30.1,19.4,4.0
+Spin,0,0,30.1,19.4,4.0
+Saint Jérome,0,0,30.1,19.4,0.0
+Saint Sauveur,0,0,30.1,19.4,0.0
+Assomption,0,0,30.1,19.4,0.0
+Benny,0,0,30.1,19.4,0.0
+Dorval,0,0,30.1,19.4,0.0
+Magog,0,0,30.1,19.4,0.0
+Berthierville,0,0,30.1,19.4,0.0
+Ahuntsic,1,1,21.5,12.4,5.0
+VanHorne,1,1,21.5,12.4,6.0
+Verdun,1,1,21.5,12.4,2.0
+Lasalle,1,1,21.5,12.4,5.0
+Préfontaine,1,1,21.5,12.4,8.0
+Boucherville,1,1,21.5,12.4,8.0
+Taz,1,1,21.5,12.4,6.0
+Spin,1,1,21.5,12.4,6.0
+Saint Jérome,1,1,21.5,12.4,2.0
+Saint Sauveur,1,1,21.5,12.4,2.0
+Assomption,1,1,21.5,12.4,2.0
+Benny,1,1,21.5,12.4,5.0
+Dorval,1,1,21.5,12.4,4.0
+Magog,1,1,21.5,12.4,1.0
+Berthierville,1,1,21.5,12.4,2.0
+Ahuntsic,2,2,29.9,25.2,6.0
+VanHorne,2,2,29.9,25.2,4.0
+Verdun,2,2,29.9,25.2,2.0
+Lasalle,2,2,29.9,25.2,6.0
+Préfontaine,2,2,29.9,25.2,5.0
+Boucherville,2,2,29.9,25.2,5.0
+Taz,2,2,29.9,25.2,2.0
+Spin,2,2,29.9,25.2,2.0
+Saint Jérome,2,2,29.9,25.2,7.0
+Saint Sauveur,2,2,29.9,25.2,8.0
+Assomption,2,2,29.9,25.2,8.0
+Benny,2,2,29.9,25.2,6.0
+Dorval,2,2,29.9,25.2,6.0
+Magog,2,2,29.9,25.2,9.0
+Berthierville,2,2,29.9,25.2,8.0
+Ahuntsic,3,0,28.1,15.5,0.0
+VanHorne,3,0,28.1,15.5,0.0
+Verdun,3,0,28.1,15.5,0.0
+Lasalle,3,0,28.1,15.5,0.0
+Préfontaine,3,0,28.1,15.5,0.0
+Boucherville,3,0,28.1,15.5,0.0
+Taz,3,0,28.1,15.5,6.0
+Spin,3,0,28.1,15.5,6.0
+Saint Jérome,3,0,28.1,15.5,0.0
+Saint Sauveur,3,0,28.1,15.5,0.0
+Assomption,3,0,28.1,15.5,0.0
+Benny,3,0,28.1,15.5,0.0
+Dorval,3,0,28.1,15.5,0.0
+Magog,3,0,28.1,15.5,0.0
+Berthierville,3,0,28.1,15.5,0.0
+Ahuntsic,4,2,17.5,20.0,6.0
+VanHorne,4,2,17.5,20.0,4.0
+Verdun,4,2,17.5,20.0,2.0
+Lasalle,4,2,17.5,20.0,6.0
+Préfontaine,4,2,17.5,20.0,5.0
+Boucherville,4,2,17.5,20.0,5.0
+Taz,4,2,17.5,20.0,2.0
+Spin,4,2,17.5,20.0,2.0
+Saint Jérome,4,2,17.5,20.0,7.0
+Saint Sauveur,4,2,17.5,20.0,8.0
+Assomption,4,2,17.5,20.0,8.0
+Benny,4,2,17.5,20.0,6.0
+Dorval,4,2,17.5,20.0,6.0
+Magog,4,2,17.5,20.0,9.0
+Berthierville,4,2,17.5,20.0,8.0
+Ahuntsic,5,0,35.4,11.4,0.0
+VanHorne,5,0,35.4,11.4,0.0
+Verdun,5,0,35.4,11.4,0.0
+Lasalle,5,0,35.4,11.4,0.0
+Préfontaine,5,0,35.4,11.4,0.0
+Boucherville,5,0,35.4,11.4,0.0
+Taz,5,0,35.4,11.4,6.0
+Spin,5,0,35.4,11.4,6.0
+Saint Jérome,5,0,35.4,11.4,0.0
+Saint Sauveur,5,0,35.4,11.4,0.0
+Assomption,5,0,35.4,11.4,0.0
+Benny,5,0,35.4,11.4,0.0
+Dorval,5,0,35.4,11.4,0.0
+Magog,5,0,35.4,11.4,0.0
+Berthierville,5,0,35.4,11.4,0.0
+Ahuntsic,6,0,9.6,27.2,0.0
+VanHorne,6,0,9.6,27.2,0.0
+Verdun,6,0,9.6,27.2,0.0
+Lasalle,6,0,9.6,27.2,0.0
+Préfontaine,6,0,9.6,27.2,0.0
+Boucherville,6,0,9.6,27.2,0.0
+Taz,6,0,9.6,27.2,9.0
+Spin,6,0,9.6,27.2,8.0
+Saint Jérome,6,0,9.6,27.2,0.0
+Saint Sauveur,6,0,9.6,27.2,0.0
+Assomption,6,0,9.6,27.2,0.0
+Benny,6,0,9.6,27.2,0.0
+Dorval,6,0,9.6,27.2,0.0
+Magog,6,0,9.6,27.2,0.0
+Berthierville,6,0,9.6,27.2,0.0
+Ahuntsic,7,3,7.0,19.6,6.0
+VanHorne,7,3,7.0,19.6,4.0
+Verdun,7,3,7.0,19.6,2.0
+Lasalle,7,3,7.0,19.6,6.0
+Préfontaine,7,3,7.0,19.6,5.0
+Boucherville,7,3,7.0,19.6,5.0
+Taz,7,3,7.0,19.6,4.0
+Spin,7,3,7.0,19.6,4.0
+Saint Jérome,7,3,7.0,19.6,7.0
+Saint Sauveur,7,3,7.0,19.6,9.0
+Assomption,7,3,7.0,19.6,7.0
+Benny,7,3,7.0,19.6,6.0
+Dorval,7,3,7.0,19.6,6.0
+Magog,7,3,7.0,19.6,9.0
+Berthierville,7,3,7.0,19.6,9.0
+Ahuntsic,8,0,26.9,20.3,0.0
+VanHorne,8,0,26.9,20.3,0.0
+Verdun,8,0,26.9,20.3,0.0
+Lasalle,8,0,26.9,20.3,0.0
+Préfontaine,8,0,26.9,20.3,0.0
+Boucherville,8,0,26.9,20.3,0.0
+Taz,8,0,26.9,20.3,7.0
+Spin,8,0,26.9,20.3,6.0
+Saint Jérome,8,0,26.9,20.3,0.0
+Saint Sauveur,8,0,26.9,20.3,0.0
+Assomption,8,0,26.9,20.3,0.0
+Benny,8,0,26.9,20.3,0.0
+Dorval,8,0,26.9,20.3,0.0
+Magog,8,0,26.9,20.3,0.0
+Berthierville,8,0,26.9,20.3,0.0
+Ahuntsic,9,2,22.1,10.0,6.0
+VanHorne,9,2,22.1,10.0,4.0
+Verdun,9,2,22.1,10.0,2.0
+Lasalle,9,2,22.1,10.0,6.0
+Préfontaine,9,2,22.1,10.0,5.0
+Boucherville,9,2,22.1,10.0,5.0
+Taz,9,2,22.1,10.0,4.0
+Spin,9,2,22.1,10.0,3.0
+Saint Jérome,9,2,22.1,10.0,8.0
+Saint Sauveur,9,2,22.1,10.0,9.0
+Assomption,9,2,22.1,10.0,8.0
+Benny,9,2,22.1,10.0,6.0
+Dorval,9,2,22.1,10.0,6.0
+Magog,9,2,22.1,10.0,9.0
+Berthierville,9,2,22.1,10.0,9.0
