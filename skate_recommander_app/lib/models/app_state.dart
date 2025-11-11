@@ -3,7 +3,7 @@ import 'package:flutter/foundation.dart';
 class AppState extends ChangeNotifier{
   final List<Map<String, dynamic>> _weatherData = [
     {
-      'spot': 'La Défense',
+      'spot': 'Ahuntsic',
       'temp': 22,
       'feels_like': 24,
       'humidity': '55%',
@@ -12,7 +12,7 @@ class AppState extends ChangeNotifier{
       'longitude': 2.235,
     },
     {
-      'spot': 'Bois de Boulogne',
+      'spot': 'Van Horne',
       'temp': 20,
       'feels_like': 19,
       'humidity': '68%',
@@ -21,7 +21,7 @@ class AppState extends ChangeNotifier{
       'longitude': 2.253,
     },
     {
-      'spot': 'Parc de la Villette',
+      'spot': 'Verdun',
       'temp': 18,
       'feels_like': 16,
       'humidity': '82%',
