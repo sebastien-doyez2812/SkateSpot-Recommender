@@ -9,7 +9,7 @@ import 'package:skate_recommander_app/widgets/weather_spot_card.dart';
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
-  static final LatLng centerMap = LatLng(48.8566, 2.3522);
+  static final LatLng centerMap = LatLng( 45.514752, -73.4789632);
   @override
   Widget build(BuildContext context) {
     final appState = Provider.of<AppState>(context);
