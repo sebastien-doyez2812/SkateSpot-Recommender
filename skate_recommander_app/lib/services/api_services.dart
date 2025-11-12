@@ -4,7 +4,7 @@ import 'package:dio/dio.dart';
 import 'package:skate_recommander_app/models/app_state.dart'; // Pour utiliser SkateSpotMetadata et WeatherMetaData
 
 // La clé API (PLACEHOLDER: REMPLACER PAR VOTRE VRAIE CLÉ OPENWEATHER)
-const String _openWeatherApiKey = 'f56897bb7175b556a6185ffb4e24436e';
+const String _openWeatherApiKey = 'YourApiKey';
 const String _baseUrl = 'https://api.openweathermap.org/data/2.5/weather';
 
 // Classe pour gérer la récupération de données via OpenWeatherMap
