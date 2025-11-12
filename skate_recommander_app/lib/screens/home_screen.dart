@@ -42,11 +42,11 @@ class HomeScreen extends StatelessWidget {
                   ),
                   // Ajout des marqueurs pour les spots
                   MarkerLayer(
-                    markers: appState.weatherData.map((data) {
+                    markers: appState.spots.map((data) {
                       return Marker(
                         width: 80.0,
                         height: 80.0,
-                        point: LatLng(data['latitude'], data['longitude']),
+                        point: LatLng(data.latitude, data.longitude),
                         builder: (ctx) => const Icon(
                           Icons.location_pin,
                           color: Colors.red,
@@ -85,16 +85,15 @@ class HomeScreen extends StatelessWidget {
             flex: 1,
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
-              itemCount: appState.weatherData.length,
+              itemCount: appState.spots.length,
               itemBuilder: (context, index) {
-                final data = appState.weatherData[index];
+                final data = appState.spots[index];
                 return WeatherSpotCard(
-                  spotName: 'Spot ${data['spot']}',
-                  temp: data['temp'].toString(),
-                  feelsLike: data['feels_like'].toString(),
-                  humidity: data['humidity'],
-                  wind: data['wind'],
-                  timeDay: data['time_of_day'].toString(),
+                  spotName: 'Spot ${data.name}',
+                  temp: data.weatherData.temp.toString(),
+                  feelsLike: data.weatherData.feelsLike.toString(),
+                  humidity: data.weatherData.humidity.toString(),
+                  wind: data.weatherData.wind.toString(),
                 );
               },
             ),

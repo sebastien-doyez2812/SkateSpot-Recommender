@@ -7,7 +7,6 @@ class WeatherSpotCard extends StatelessWidget {
   final String feelsLike;
   final String humidity;
   final String wind;
-  final String timeDay;
 
   const WeatherSpotCard({
     super.key,
@@ -16,7 +15,6 @@ class WeatherSpotCard extends StatelessWidget {
     required this.feelsLike,
     required this.humidity,
     required this.wind,
-    required this.timeDay,
   });
 
   @override
@@ -56,7 +54,6 @@ class WeatherSpotCard extends StatelessWidget {
               _buildDataColumn('Ressenti', feelsLike, isTemp: true),
               _buildDataColumn('Humid.', humidity),
               _buildDataColumn('Vent', wind),
-              _buildDataColumn('Temps Di', timeDay),
             ],
           ),
         ],
