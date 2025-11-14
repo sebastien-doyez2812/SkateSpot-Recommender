@@ -9,7 +9,6 @@ import 'package:skate_recommander_app/widgets/weather_spot_card.dart';
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
-  static final LatLng centerMap = LatLng( 45.514752, -73.4789632);
   @override
   Widget build(BuildContext context) {
     final appState = Provider.of<AppState>(context);
@@ -32,7 +31,7 @@ class HomeScreen extends StatelessWidget {
               color: Colors.grey[200],
               child: FlutterMap(
                 options: MapOptions(
-                  center: centerMap,
+                  center: appState.centerMap,
                   zoom: 11.0,
                 ),
                 children: [
@@ -40,7 +39,7 @@ class HomeScreen extends StatelessWidget {
                     urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
                     userAgentPackageName: 'com.skaterecommander.app', // Obligatoire
                   ),
-                  // Ajout des marqueurs pour les spots
+                  // Spot localisation on the map
                   MarkerLayer(
                     markers: appState.spots.map((data) {
                       return Marker(
@@ -71,7 +70,6 @@ class HomeScreen extends StatelessWidget {
                 const SizedBox(width: 8),
                 TextButton.icon(
                   onPressed: () {
-                    // Logique de partage
                   },
                   icon: const Icon(Icons.share),
                   label: const Text('Partager'),
@@ -90,10 +88,11 @@ class HomeScreen extends StatelessWidget {
                 final data = appState.spots[index];
                 return WeatherSpotCard(
                   spotName: 'Spot ${data.name}',
-                  temp: data.weatherData.temp.toString(),
-                  feelsLike: data.weatherData.feelsLike.toString(),
-                  humidity: data.weatherData.humidity.toString(),
-                  wind: data.weatherData.wind.toString(),
+                  weather: data.weatherData.weather,
+                  temp: data.weatherData.temp.toStringAsFixed(3).toString(),
+                  feelsLike: data.weatherData.feelsLike.toStringAsFixed(3).toString(),
+                  humidity: data.weatherData.humidity.toStringAsFixed(3).toString(),
+                  wind: data.weatherData.wind.toStringAsFixed(3).toString(),
                 );
               },
             ),

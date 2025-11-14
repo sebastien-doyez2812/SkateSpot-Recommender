@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 class WeatherSpotCard extends StatelessWidget {
   final String spotName;
+  final String weather;
   final String temp;
   final String feelsLike;
   final String humidity;
@@ -11,6 +12,7 @@ class WeatherSpotCard extends StatelessWidget {
   const WeatherSpotCard({
     super.key,
     required this.spotName,
+    required this.weather,
     required this.temp,
     required this.feelsLike,
     required this.humidity,
@@ -47,13 +49,16 @@ class WeatherSpotCard extends StatelessWidget {
           const SizedBox(height: 8),
           
           // Ligne de données: Météo T | Ressenti | Humid. | Vent | Temps Di
-          Row(
+          Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              _buildDataColumn('Météo T', temp),
-              _buildDataColumn('Ressenti', feelsLike, isTemp: true),
-              _buildDataColumn('Humid.', humidity),
-              _buildDataColumn('Vent', wind),
+              _buildDataColumn("Weather", weather),
+              Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [_buildDataColumn('Météo T', temp),
+              _buildDataColumn('Ressenti', feelsLike, isTemp: true),],),
+              Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [ _buildDataColumn('Humid.', humidity),
+              _buildDataColumn('Vent', wind),],)
+              
+             
             ],
           ),
         ],

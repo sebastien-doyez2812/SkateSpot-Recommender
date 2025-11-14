@@ -1,5 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:skate_recommander_app/services/api_services.dart';
+import 'package:skate_recommander_app/services/geolocation_servcice.dart';
+import 'package:latlong2/latlong.dart';
 
 class SkateSpotMetadata {
   final String name;
@@ -14,12 +16,14 @@ class SkateSpotMetadata {
 }
 
 class WeatherMetaData{
+  final String weather;
   final double temp;
   final double feelsLike;
   final double humidity;
   final double wind;
 
   WeatherMetaData({
+    required this.weather,
     required this.temp,
     required this.feelsLike,
     required this.humidity,
@@ -51,6 +55,13 @@ class AppState extends ChangeNotifier{
   final ApiService _apiService;
   // TODO:
   //final TfliteService _tfliteService;
+
+  final double _defaultLat = 45.514752; 
+  final double _defaultLng = -73.4789632;
+  double _userLatitude = 45.514752;
+  double _userLongitude = -73.4789632;
+  
+  LatLng get centerMap =>LatLng(_userLatitude, _userLongitude);
 
   bool _isLoading = false;
   bool _hasError = false;
@@ -96,6 +107,7 @@ class AppState extends ChangeNotifier{
       );
 
       final defaultSnapShot = WeatherMetaData(
+        weather: "Clouds",
         temp: 0.0,
         feelsLike: 0.0,
         humidity: 0.0,
@@ -104,10 +116,23 @@ class AppState extends ChangeNotifier{
       return SkateModel(skateSpotData: meta, weatherData: defaultSnapShot, recommendationScore: 1.0);
     }).toList();
 
+    updateUserLocation();
     fetchAndProcessData();
   }
 
-
+  Future <void> updateUserLocation() async {
+    try{
+      final position = await getCurrentLocation();
+      if (position != null){
+        _userLatitude = position.latitude;
+        _userLongitude = position.longitude;
+        notifyListeners();
+      }
+    }
+    catch(e){
+      print(e);
+    }
+  }
   Future <void> fetchAndProcessData() async {
     if (_isLoading) return;
 
@@ -127,6 +152,7 @@ class AppState extends ChangeNotifier{
           
           // Mappage de WeatherMetaData sans timeOfDayIndex
           newWeather = WeatherMetaData(
+            weather: snapshot.weather,
             temp: snapshot.temp,
             feelsLike: snapshot.feelsLike,
             humidity: snapshot.humidity,

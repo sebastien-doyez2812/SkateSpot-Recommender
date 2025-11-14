@@ -4,7 +4,7 @@ import 'package:dio/dio.dart';
 import 'package:skate_recommander_app/models/app_state.dart'; // Pour utiliser SkateSpotMetadata et WeatherMetaData
 
 // La clé API (PLACEHOLDER: REMPLACER PAR VOTRE VRAIE CLÉ OPENWEATHER)
-const String _openWeatherApiKey = 'f56897bb7175b556a6185ffb4e24436e';
+const String _openWeatherApiKey = 'APIKEYHERE';
 const String _baseUrl = 'https://api.openweathermap.org/data/2.5/weather';
 
 // Classe pour gérer la récupération de données via OpenWeatherMap
@@ -13,9 +13,8 @@ class ApiService {
 
   // Correction: Maintenant, retourne WeatherMetaData
   Future<WeatherMetaData> fetchWeatherForSpot(SkateSpotMetadata metadata) async {
-    if (_openWeatherApiKey == 'VOTRE_CLE_OPENWEATHER_ICI') {
-      print('Clé API OpenWeather manquante. Utilisation de données simulées.');
-      // Fallback vers des données simulées si la clé n'est pas configurée
+    if (_openWeatherApiKey == 'API_KEY_HERE') {
+      print('Missing API key...');
       return _simulateWeather(metadata);
     }
 
@@ -26,12 +25,12 @@ class ApiService {
           'lat': metadata.latitude,
           'lon': metadata.longitude,
           'appid': _openWeatherApiKey,
-          'units': 'metric', // Pour obtenir les unités en Celsius
-          'lang': 'fr', // Langue de la description
+          'units': 'metric', // Celsius
+          'lang': 'fr', // Language
         },
       );
 
-      // Vérifie que la requête a réussi (code 200)
+      // 200 means it ' s a successful API call
       if (response.statusCode == 200) {
         return _parseWeatherData(response.data);
       } else {
@@ -46,18 +45,17 @@ class ApiService {
     }
   }
 
-  // Fonction interne pour analyser la réponse JSON de l'API et la mapper à WeatherMetaData
   WeatherMetaData _parseWeatherData(Map<String, dynamic> json) {
-    // Les températures sont en Kelvin par défaut, mais 'units': 'metric' les met en Celsius.
+    final weather  = (json['weather'][0]['main'].toString());
     final temp = (json['main']['temp'] as num).toDouble();
     final feelsLike = (json['main']['feels_like'] as num).toDouble();
     final humidity = (json['main']['humidity'] as int).toDouble(); 
-    // La vitesse du vent est en m/s, convertie en km/h
+    // Wind speed is in m/s, need to convert:
     final windMps = (json['wind']['speed'] as num).toDouble();
     final windKmh = windMps * 3.6; // 1 m/s = 3.6 km/h
 
-    // Retourne maintenant WeatherMetaData
     return WeatherMetaData(
+      weather: weather,
       temp: temp,
       feelsLike: feelsLike,
       humidity: humidity,
@@ -78,6 +76,7 @@ class ApiService {
     
     // Création et retour de l'objet WeatherMetaData après le délai
     return WeatherMetaData( 
+      weather: "Clouds",
       temp: temp,
       feelsLike: temp + random.nextDouble() * 2 - 1,
       humidity: humidity.clamp(50.0, 90.0),
