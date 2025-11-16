@@ -22,7 +22,7 @@ It reproduces a **mini MLOps workflow**, similar to **AWS SageMaker + S3**, but 
 | Cloud Simulation | Docker Compose | Orchestrates multiple containers |
 | Storage | MinIO | S3-compatible object storage for datasets |
 | Computation | Jupyter Notebook | Local equivalent to AWS SageMaker |
-| Frontend | Qt C++ | Mobile app displaying skateparks, distances, and recommendations |
+| Frontend | Flutter | Mobile app displaying skateparks, distances, and recommendations |
 
 
 ## Docker Configuration:
