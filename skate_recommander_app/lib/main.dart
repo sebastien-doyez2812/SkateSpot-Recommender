@@ -5,9 +5,11 @@ import 'package:skate_recommander_app/screens/home_screen.dart';
 import 'package:skate_recommander_app/services/api_services.dart';
 import 'package:skate_recommander_app/services/direction_service.dart';
 import 'package:skate_recommander_app/services/tflite_service.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
-void main() {
-  runApp(const MyApp());
+Future<void> main() async {
+  await dotenv.load(fileName: ".env");
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {

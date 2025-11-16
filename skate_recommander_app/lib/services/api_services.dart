@@ -1,19 +1,17 @@
 import 'dart:async';
-import 'dart:math'; // Import de 'dart:math' pour Random
+import 'dart:math'; 
 import 'package:dio/dio.dart';
-import 'package:skate_recommander_app/models/app_state.dart'; // Pour utiliser SkateSpotMetadata et WeatherMetaData
+import 'package:skate_recommander_app/models/app_state.dart'; 
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
-// La clé API (PLACEHOLDER: REMPLACER PAR VOTRE VRAIE CLÉ OPENWEATHER)
-const String _openWeatherApiKey = 'APIKEYHERE';
+final String? _openWeatherApiKey = dotenv.env['OPENWEATHERAPI'];
 const String _baseUrl = 'https://api.openweathermap.org/data/2.5/weather';
 
-// Classe pour gérer la récupération de données via OpenWeatherMap
 class ApiService {
   final Dio _dio = Dio();
 
-  // Correction: Maintenant, retourne WeatherMetaData
   Future<WeatherMetaData> fetchWeatherForSpot(SkateSpotMetadata metadata) async {
-    if (_openWeatherApiKey == 'API_KEY_HERE') {
+    if (_openWeatherApiKey == 'API_KEY_HERE' || _openWeatherApiKey == null) {
       print('Missing API key...');
       return _simulateWeather(metadata);
     }
@@ -63,18 +61,14 @@ class ApiService {
     );
   }
 
-  // --- Données simulées pour le Fallback ---
-  // CORRECTION: La fonction est maintenant async et retourne un Future<WeatherMetaData>
   Future<WeatherMetaData> _simulateWeather(SkateSpotMetadata metadata) async {
     final Random random = Random();
-    final temp = 15 + random.nextDouble() * 10; // Température entre 15 et 25°
-    final wind = 5 + random.nextDouble() * 15; // Vent entre 5 et 20 km/h
-    final humidity = 50 + random.nextDouble() * 40; // Humidité entre 50% et 90%
+    final temp = 15 + random.nextDouble() * 10; 
+    final wind = 5 + random.nextDouble() * 15; 
+    final humidity = 50 + random.nextDouble() * 40; 
 
-    // Simulation d'un délai réseau (await sur le Future.delayed)
     await Future.delayed(const Duration(milliseconds: 250)); 
     
-    // Création et retour de l'objet WeatherMetaData après le délai
     return WeatherMetaData( 
       weather: "Clouds",
       temp: temp,

@@ -14,15 +14,13 @@ class HomeScreen extends StatelessWidget {
     final appState = Provider.of<AppState>(context, listen: false);
 
     return FutureBuilder<void>(
-      // 1. Déclenche la Future (l'initialisation des données)
+      // Ask to init data:
       future: appState.initializeData(),
       builder: (context, snapshot) {
         
-        // 2. Gère l'état de la Future
         if (snapshot.connectionState == ConnectionState.waiting) {
-          // Affiche un écran de chargement pendant l'attente
+          // Loading page
           return Scaffold(
-            // appBar: AppBar(title: Text('Skate Spot Advisor\nLoading...'), i),
             body: Center(child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
@@ -46,15 +44,11 @@ class HomeScreen extends StatelessWidget {
         }
 
         if (snapshot.hasError) {
-          // Gère les erreurs
           return Scaffold(
             appBar: AppBar(title: const Text('SkateSpotRecommander')),
             body: Center(child: Text('Erreur: ${snapshot.error}')),
           );
         }
-
-        // 3. Affiche le contenu réel lorsque les données sont prêtes
-        // Notez que le Provider.of<AppState> à l'intérieur de ce builder aura listen: true
         return _buildContent(context, Provider.of<AppState>(context)); 
       },
     );
@@ -66,16 +60,6 @@ class HomeScreen extends StatelessWidget {
     sortedSpots.sort((a, b) => b.score.compareTo(a.score));
     
     return Scaffold(
-      // TODO: Maybe add later...
-      // appBar: AppBar(
-      //   title: const Text('SkateSpotRecommander', style: TextStyle(fontSize: 14)),
-      //   actions: const [
-      //     Padding(
-      //       padding: EdgeInsets.only(right: 16.0),
-      //       child: Icon(Icons.settings),
-      //     ),
-      //   ],
-      // ),
       body: Column(
         children: <Widget>[
           Expanded(
@@ -113,7 +97,6 @@ class HomeScreen extends StatelessWidget {
           ),
           
           // TODO: add the share Button
-          // // Ligne de séparation et boutons
           const Divider(height: 1),
           Padding(
             padding: const EdgeInsets.all(8.0),
@@ -132,18 +115,16 @@ class HomeScreen extends StatelessWidget {
           //   ),
           ),
 
-          // 2. Liste des Spots/Météo - Zone inférieure
+          // Spots list:
           Expanded(
             flex: 1,
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
               itemCount: appState.spots.length,
               itemBuilder: (context, index) {
-                final data = sortedSpots[index]; //appState.spots[index];
+                final data = sortedSpots[index]; 
 
                 // Sort by Satisfaction score:
-
-
                 return WeatherSpotCard(
                   spotName: 'Spot ${data.name}',
                   weather: data.weatherData.weather,

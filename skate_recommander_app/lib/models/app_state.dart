@@ -129,9 +129,6 @@ class AppState extends ChangeNotifier{
       _tfliteService.loadModel();
       return SkateModel(skateSpotData: meta, weatherData: defaultSnapShot, travelDirection: defaultDirections, recommendationScore: 1.0);
     }).toList();
-    // initializeData();
-    // fetchAndProcessData();
-    // updateUserLocation();
   }
 
   Future <void> initializeData() async{
@@ -226,11 +223,10 @@ class AppState extends ChangeNotifier{
           if (kDebugMode) print('[-] Error fetching weather for ${spot.name}: $e. Stay on the previous data.');
         }
         
-        // 2. Retourner le nouveau SkateModel. On conserve la direction existante.
         return SkateModel(
           skateSpotData: spot.skateSpotData, 
           weatherData: newWeather, 
-          travelDirection: spot.travelDirection, // Utilise la direction existante
+          travelDirection: spot.travelDirection,
           recommendationScore: newScore
         );
       }).toList();
