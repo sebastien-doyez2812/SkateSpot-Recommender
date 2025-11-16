@@ -11,18 +11,67 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final appState = Provider.of<AppState>(context);
+    final appState = Provider.of<AppState>(context, listen: false);
 
+    return FutureBuilder<void>(
+      // 1. Déclenche la Future (l'initialisation des données)
+      future: appState.initializeData(),
+      builder: (context, snapshot) {
+        
+        // 2. Gère l'état de la Future
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          // Affiche un écran de chargement pendant l'attente
+          return Scaffold(
+            // appBar: AppBar(title: Text('Skate Spot Advisor\nLoading...'), i),
+            body: Center(child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                  Image.asset(
+                    "assets/icons/logo_skate_spot_advisor.png",
+                    height: 80.0, 
+                  ),
+                  SizedBox(height: 30.0),
+                  CircularProgressIndicator(),
+                  SizedBox(height: 15.0,),
+                  Text(
+                    'Fetching Skate Spot Data...',
+                    style: TextStyle(
+                    fontSize: 18.0,
+                    color: Colors.grey[700],
+                  ),
+                )
+              ],
+            )),
+          );
+        }
+
+        if (snapshot.hasError) {
+          // Gère les erreurs
+          return Scaffold(
+            appBar: AppBar(title: const Text('SkateSpotRecommander')),
+            body: Center(child: Text('Erreur: ${snapshot.error}')),
+          );
+        }
+
+        // 3. Affiche le contenu réel lorsque les données sont prêtes
+        // Notez que le Provider.of<AppState> à l'intérieur de ce builder aura listen: true
+        return _buildContent(context, Provider.of<AppState>(context)); 
+      },
+    );
+  }
+
+  Widget _buildContent(BuildContext context, AppState appState){
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('SkateSpotRecommander', style: TextStyle(fontSize: 14)),
-        actions: const [
-          Padding(
-            padding: EdgeInsets.only(right: 16.0),
-            child: Icon(Icons.settings),
-          ),
-        ],
-      ),
+      // TODO: Maybe add later...
+      // appBar: AppBar(
+      //   title: const Text('SkateSpotRecommander', style: TextStyle(fontSize: 14)),
+      //   actions: const [
+      //     Padding(
+      //       padding: EdgeInsets.only(right: 16.0),
+      //       child: Icon(Icons.settings),
+      //     ),
+      //   ],
+      // ),
       body: Column(
         children: <Widget>[
           Expanded(
@@ -31,8 +80,8 @@ class HomeScreen extends StatelessWidget {
               color: Colors.grey[200],
               child: FlutterMap(
                 options: MapOptions(
-                  center: appState.centerMap,
-                  zoom: 11.0,
+                  initialCenter: appState.centerMap,
+                  initialZoom: 12.0,
                 ),
                 children: [
                   TileLayer(
@@ -46,7 +95,7 @@ class HomeScreen extends StatelessWidget {
                         width: 80.0,
                         height: 80.0,
                         point: LatLng(data.latitude, data.longitude),
-                        builder: (ctx) => const Icon(
+                        child: const Icon( 
                           Icons.location_pin,
                           color: Colors.red,
                           size: 40.0,
@@ -59,23 +108,24 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
           
-          // Ligne de séparation et boutons
+          // TODO: add the share Button
+          // // Ligne de séparation et boutons
           const Divider(height: 1),
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                const Text('4', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
-                const SizedBox(width: 8),
-                TextButton.icon(
-                  onPressed: () {
-                  },
-                  icon: const Icon(Icons.share),
-                  label: const Text('Partager'),
-                ),
-              ],
-            ),
+          //   child: Row(
+          //     mainAxisAlignment: MainAxisAlignment.end,
+          //     children: [
+          //       const Text('4', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
+          //       const SizedBox(width: 8),
+          //       TextButton.icon(
+          //         onPressed: () {
+          //         },
+          //         icon: const Icon(Icons.share),
+          //         label: const Text('Partager'),
+          //       ),
+          //     ],
+          //   ),
           ),
 
           // 2. Liste des Spots/Météo - Zone inférieure
@@ -93,6 +143,8 @@ class HomeScreen extends StatelessWidget {
                   feelsLike: data.weatherData.feelsLike.toStringAsFixed(3).toString(),
                   humidity: data.weatherData.humidity.toStringAsFixed(3).toString(),
                   wind: data.weatherData.wind.toStringAsFixed(3).toString(),
+                  trafficTime: data.travelDirection.durationText,
+                  distance: data.travelDirection.distanceText,
                 );
               },
             ),

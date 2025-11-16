@@ -8,6 +8,8 @@ class WeatherSpotCard extends StatelessWidget {
   final String feelsLike;
   final String humidity;
   final String wind;
+  final String trafficTime;
+  final String distance;
 
   const WeatherSpotCard({
     super.key,
@@ -17,6 +19,8 @@ class WeatherSpotCard extends StatelessWidget {
     required this.feelsLike,
     required this.humidity,
     required this.wind,
+    required this.trafficTime,
+    required this.distance
   });
 
   @override
@@ -56,9 +60,10 @@ class WeatherSpotCard extends StatelessWidget {
               Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [_buildDataColumn('Météo T', temp),
               _buildDataColumn('Ressenti', feelsLike, isTemp: true),],),
               Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [ _buildDataColumn('Humid.', humidity),
-              _buildDataColumn('Vent', wind),],)
+              _buildDataColumn('Vent', wind),],),
               
-             
+              Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [ _buildDataColumn('Traffic.', trafficTime),
+              _buildDataColumn('dist', distance),],)
             ],
           ),
         ],

@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:skate_recommander_app/services/api_services.dart';
 import 'package:skate_recommander_app/services/geolocation_servcice.dart';
+import 'package:skate_recommander_app/services/direction_service.dart';
 import 'package:latlong2/latlong.dart';
 
 class SkateSpotMetadata {
@@ -34,14 +35,18 @@ class WeatherMetaData{
 class SkateModel {
   final SkateSpotMetadata skateSpotData;
   final WeatherMetaData weatherData;
+  final DirectionsInfo travelDirection;
   double recommendationScore;
 
   WeatherMetaData get snapshot => weatherData;
+  DirectionsInfo get snapshotTravel => travelDirection;
+
   bool get isRecommended => recommendationScore > 0.5;
 
   SkateModel({
     required this.skateSpotData, 
     required this.weatherData, 
+    required this.travelDirection,
     required this.recommendationScore
   });
 
@@ -53,6 +58,7 @@ class SkateModel {
 
 class AppState extends ChangeNotifier{
   final ApiService _apiService;
+  final DirectionService _directionService;
   // TODO:
   //final TfliteService _tfliteService;
 
@@ -95,15 +101,19 @@ class AppState extends ChangeNotifier{
 
   AppState({
     required ApiService apiService,
+    required DirectionService directionService,
     // TODO: to add
     // required TfliteService tfliteService,
-  }) : _apiService = apiService
+  }) : _apiService = apiService, 
+  _directionService = directionService
   {
+    final DirectionsInfo defaultDirections = DirectionsInfo(distanceText: "0.0 km", durationText: "0 min");
+
     _spots = _spotMetadataRaw.map((data) {
       final meta = SkateSpotMetadata(
         name: data['spot'] as String,
-        latitude: data['latitude'] as double,
-        longitude: data['longitude'] as double
+        latitude: data['latitude'].toDouble(),
+        longitude: data['longitude'].toDouble()
       );
 
       final defaultSnapShot = WeatherMetaData(
@@ -113,26 +123,64 @@ class AppState extends ChangeNotifier{
         humidity: 0.0,
         wind: 0.0
       );
-      return SkateModel(skateSpotData: meta, weatherData: defaultSnapShot, recommendationScore: 1.0);
+      
+      return SkateModel(skateSpotData: meta, weatherData: defaultSnapShot, travelDirection: defaultDirections, recommendationScore: 1.0);
     }).toList();
-
-    updateUserLocation();
-    fetchAndProcessData();
+    // initializeData();
+    // fetchAndProcessData();
+    // updateUserLocation();
   }
 
+  Future <void> initializeData() async{
+    await updateUserLocation();
+    await fetchAndProcessData();
+  }
   Future <void> updateUserLocation() async {
     try{
       final position = await getCurrentLocation();
       if (position != null){
         _userLatitude = position.latitude;
         _userLongitude = position.longitude;
-        notifyListeners();
       }
     }
     catch(e){
       print(e);
     }
+
+    await calculateAllSpotDirections();
+
+    notifyListeners();
   }
+
+  Future<void> calculateAllSpotDirections() async {
+    if (_userLatitude == _defaultLat && _userLongitude == _defaultLng) return;
+
+    final List<SkateModel> updatedSpots = [];
+    for(final spot in _spots){
+      DirectionsInfo newDirections = spot.travelDirection;
+      try{
+        final DirectionsInfo? info = await _directionService.getDirections(originLat: _userLatitude, originLng: _userLongitude, destLat: spot.latitude, destLng: spot.longitude);
+        if (info != null){
+          newDirections = info;
+        }
+      }
+      catch(e){
+        if (kDebugMode) print('[-] Error for spot ${spot.name}: $e');
+      }
+      // To avoid the error 429 too much request per second:
+      await Future.delayed(const Duration(milliseconds: 20));
+
+
+      updatedSpots.add(SkateModel(
+        skateSpotData: spot.skateSpotData, 
+        weatherData: spot.weatherData, 
+        travelDirection: newDirections, 
+        recommendationScore: spot.recommendationScore
+      ));
+    }
+    _spots = updatedSpots;
+  }
+
   Future <void> fetchAndProcessData() async {
     if (_isLoading) return;
 
@@ -144,13 +192,12 @@ class AppState extends ChangeNotifier{
       final List<Future<SkateModel>> futures = _spots.map((spot) async {
         
         WeatherMetaData newWeather = spot.weatherData;
-        double newScore = 0.0; // Score toujours à 0.0 temporairement
+        double newScore = 0.0; 
         
         try {
           // 1. Appel de l'API Météo
           final WeatherMetaData snapshot = await _apiService.fetchWeatherForSpot(spot.skateSpotData);
           
-          // Mappage de WeatherMetaData sans timeOfDayIndex
           newWeather = WeatherMetaData(
             weather: snapshot.weather,
             temp: snapshot.temp,
@@ -162,18 +209,18 @@ class AppState extends ChangeNotifier{
           newScore = 1.0;
           
         } catch (e) {
-          if (kDebugMode) print('[-] Error for ${spot.name}: $e. Stay on the previous data.');
+          if (kDebugMode) print('[-] Error fetching weather for ${spot.name}: $e. Stay on the previous data.');
         }
-
-        // Retourner le nouveau SkateModel mis à jour
+        
+        // 2. Retourner le nouveau SkateModel. On conserve la direction existante.
         return SkateModel(
           skateSpotData: spot.skateSpotData, 
           weatherData: newWeather, 
+          travelDirection: spot.travelDirection, // Utilise la direction existante
           recommendationScore: newScore
         );
       }).toList();
 
-      // Attendre la fin de toutes les opérations
       _spots = await Future.wait(futures);
 
     } catch (e) {
