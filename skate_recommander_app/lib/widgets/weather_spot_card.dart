@@ -10,6 +10,7 @@ class WeatherSpotCard extends StatelessWidget {
   final String wind;
   final String trafficTime;
   final String distance;
+  final String satisfaction;
 
   const WeatherSpotCard({
     super.key,
@@ -20,7 +21,8 @@ class WeatherSpotCard extends StatelessWidget {
     required this.humidity,
     required this.wind,
     required this.trafficTime,
-    required this.distance
+    required this.distance,
+    required this.satisfaction
   });
 
   @override
@@ -63,7 +65,8 @@ class WeatherSpotCard extends StatelessWidget {
               _buildDataColumn('Vent', wind),],),
               
               Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [ _buildDataColumn('Traffic.', trafficTime),
-              _buildDataColumn('dist', distance),],)
+              _buildDataColumn('dist', distance),],),
+              _buildDataColumn('Satisfaction:', satisfaction)
             ],
           ),
         ],

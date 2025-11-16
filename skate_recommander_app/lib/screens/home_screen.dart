@@ -61,6 +61,10 @@ class HomeScreen extends StatelessWidget {
   }
 
   Widget _buildContent(BuildContext context, AppState appState){
+    final List<SkateModel> spots = appState.spots;
+    final List<SkateModel> sortedSpots = List.from(spots);
+    sortedSpots.sort((a, b) => b.score.compareTo(a.score));
+    
     return Scaffold(
       // TODO: Maybe add later...
       // appBar: AppBar(
@@ -135,7 +139,11 @@ class HomeScreen extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               itemCount: appState.spots.length,
               itemBuilder: (context, index) {
-                final data = appState.spots[index];
+                final data = sortedSpots[index]; //appState.spots[index];
+
+                // Sort by Satisfaction score:
+
+
                 return WeatherSpotCard(
                   spotName: 'Spot ${data.name}',
                   weather: data.weatherData.weather,
@@ -145,6 +153,7 @@ class HomeScreen extends StatelessWidget {
                   wind: data.weatherData.wind.toStringAsFixed(3).toString(),
                   trafficTime: data.travelDirection.durationText,
                   distance: data.travelDirection.distanceText,
+                  satisfaction: data.score.toStringAsFixed(3).toString(),
                 );
               },
             ),

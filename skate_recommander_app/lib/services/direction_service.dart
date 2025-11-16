@@ -3,11 +3,15 @@ import 'package:http/http.dart' as http;
 import 'package:flutter/foundation.dart';
 
 class DirectionsInfo{
+  final double duration;
+  final double distance;
   final String distanceText;
   final String durationText;
   String get myDistanceText => distanceText;
   String get myDurationText => durationText;
-  DirectionsInfo({required this.distanceText, required this.durationText});
+  double get myDuration => duration;
+  double get myDistance => distance;
+  DirectionsInfo({required this.distanceText, required this.durationText, required this.distance, required this.duration});
 }
 
 
@@ -34,12 +38,16 @@ Future<DirectionsInfo?> getDirections({
           final double distanceMeters = route['distance'].toDouble();
           final double durationSeconds = route['duration'].toDouble();
 
+          final double finalDistanceMeters = (distanceMeters / 1000);
+          final double finalDurationSeconds = (durationSeconds / 60);
           final String distanceKm = (distanceMeters / 1000).toStringAsFixed(1) + ' km';
           final String durationMin = (durationSeconds / 60).toStringAsFixed(0) + ' min';
 
           return DirectionsInfo(
             distanceText: distanceKm,
             durationText: durationMin,
+            duration: finalDurationSeconds,
+            distance: finalDistanceMeters,
           );
         }
         else {
