@@ -128,13 +128,13 @@ class HomeScreen extends StatelessWidget {
                 return WeatherSpotCard(
                   spotName: 'Spot ${data.name}',
                   weather: data.weatherData.weather,
-                  temp: data.weatherData.temp.toStringAsFixed(3).toString(),
-                  feelsLike: data.weatherData.feelsLike.toStringAsFixed(3).toString(),
-                  humidity: data.weatherData.humidity.toStringAsFixed(3).toString(),
-                  wind: data.weatherData.wind.toStringAsFixed(3).toString(),
+                  temp: data.weatherData.temp.toStringAsFixed(1),
+                  feelsLike: data.weatherData.feelsLike.toStringAsFixed(1),
+                  humidity: data.weatherData.humidity.toStringAsFixed(1),
+                  wind: data.weatherData.wind.toStringAsFixed(1),
                   trafficTime: data.travelDirection.durationText,
                   distance: data.travelDirection.distanceText,
-                  satisfaction: data.score.toStringAsFixed(3).toString(),
+                  satisfaction: data.score.toStringAsFixed(1),
                 );
               },
             ),

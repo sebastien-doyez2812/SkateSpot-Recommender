@@ -59,14 +59,14 @@ class WeatherSpotCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               _buildDataColumn("Weather", weather),
-              Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [_buildDataColumn('Météo T', temp),
-              _buildDataColumn('Ressenti', feelsLike, isTemp: true),],),
-              Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [ _buildDataColumn('Humid.', humidity),
-              _buildDataColumn('Vent', wind),],),
+              Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [_buildDataColumn('Météo T', "$temp °C"),
+              _buildDataColumn('Ressenti', "$feelsLike °C", isTemp: true),],),
+              Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [ _buildDataColumn('Humid.', "$humidity %"),
+              _buildDataColumn('Vent', "$wind km/h"),],),
               
               Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [ _buildDataColumn('Traffic.', trafficTime),
               _buildDataColumn('dist', distance),],),
-              _buildDataColumn('Satisfaction:', satisfaction)
+              _buildDataColumn('Satisfaction:', "$satisfaction /10")
             ],
           ),
         ],
